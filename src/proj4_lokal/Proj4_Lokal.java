@@ -96,7 +96,7 @@ public class Proj4_Lokal extends javax.swing.JFrame {
 
         jLabel3.setText("Latitude/ Breite");
 
-        jLabel4.setText("Longitude / Länge");
+        jLabel4.setText("Longitude / Laenge");
 
         jLabel5.setText("Coordinate 1");
 
@@ -118,7 +118,7 @@ public class Proj4_Lokal extends javax.swing.JFrame {
 
         jLabel13.setText("Latitude/ Breite");
 
-        jLabel14.setText("Longitude / Länge");
+        jLabel14.setText("Longitude / Laenge");
 
         projButton.setText("Calculate Proj4");
         projButton.addActionListener(new java.awt.event.ActionListener() {
@@ -133,7 +133,7 @@ public class Proj4_Lokal extends javax.swing.JFrame {
 
         jLabel15.setText("Distance local [km]");
 
-        jLabel16.setText("Roatation angle[°]");
+        jLabel16.setText("Roatation angle[Â°]");
 
         jLabel17.setText("Scalefactor");
 
@@ -352,15 +352,13 @@ public class Proj4_Lokal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void projButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_projButtonActionPerformed
-        /*
-        
-        
-        Zwei Ausführungen müssen beachtet werden
+        /*      
+        Zwei Ausfï¿½hrungen mï¿½ssen beachtet werden
         1:  Ist das lokale System perfekt genordet, so reicht es die Koordinate des Ursprungs in WGS 84 in den Proj4 String einzugeben
         2:  Ist das lokale System nicht genau genordet, so muss der Rotationswinkel zwischen dem lokalen und dem Weltsystem berechnet werden
             Dazu sind je zwei Koordinaten notwendig, die beide auf dem gleichen Hochwert liegen
         
-        Ist die erste Koordiante nicht im Ursprung des lokalen Systems (z.B.: Nullpunkt auf der Grabung ist 1000/1000), muss ein False Easting oder False Northing mit übergeben werden
+        Ist die erste Koordiante nicht im Ursprung des lokalen Systems (z.B.: Nullpunkt auf der Grabung ist 1000/1000), muss ein False Easting oder False Northing mit ï¿½bergeben werden
         
         Die Berechnungen zu den WGS Koordinaten erfolgen nach
         http://www.gassipods.de/downloads/gcexceltool_v2.xls
@@ -368,7 +366,7 @@ public class Proj4_Lokal extends javax.swing.JFrame {
         
         Die Berechnung der Winkels zwischen de
         
-        Fehler möglicherweise durch den Unterschied von Loxodrome und Orthodrome
+        Fehler mï¿½glicherweise durch den Unterschied von Loxodrome und Orthodrome
         
         */
         
@@ -393,10 +391,10 @@ public class Proj4_Lokal extends javax.swing.JFrame {
          
         //Punkt 2 muss rechts von Punkt 1 liegen
         if (x1 >= x2){
-        JOptionPane.showMessageDialog(null, "Koordinate 1 muss westlich von Koordinate 2 liegen!", "Nicht möglich", JOptionPane.ERROR_MESSAGE);             
+        JOptionPane.showMessageDialog(null, "Koordinate 1 muss westlich von Koordinate 2 liegen!", "Nicht mï¿½glich", JOptionPane.ERROR_MESSAGE);             
         } else {
         //Starten der Berechnung
-        //WGS Koordinaten in Bogenmaß
+        //WGS Koordinaten in Bogenmaï¿½
         wgs_x1_bg = wgs_x1*Math.PI/180;
         wgs_y1_bg = wgs_y1*Math.PI/180;
         wgs_x2_bg = wgs_x2*Math.PI/180;
@@ -431,7 +429,7 @@ public class Proj4_Lokal extends javax.swing.JFrame {
             //Ohne Rotation ist eine einfache Mercator projektion ausreichend
         proj4 =  "+proj=tmerc +lat_0= " + wgs_x1 + " +lon_0= " + wgs_y1 + " +k=1 +x_0= "+falsex+" +y_0= "+falsey+" +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs";  
         } else {
-            //Mit Rotation ist eine Oblique Mercator nötig
+            //Mit Rotation ist eine Oblique Mercator nï¿½tig
             //siehe http://gis.stackexchange.com/questions/83861/using-customized-coordinate-system-for-archaeological-site-data
         proj4 = "+proj=omerc +lat_0= " + wgs_x1 +  " +lonc= "+wgs_y1+" +alpha= " +winkel+" +k=1 +x_0= "+falsex+" +y_0= "+falsey+" +gamma=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs";
         }
@@ -443,8 +441,8 @@ public class Proj4_Lokal extends javax.swing.JFrame {
         winkelText.setText(String.valueOf(df2.format(winkel)));
         /*Skalierung berechenen
         
-        Skalierung wird nur angezeigt und nicht als Parameter im Proj4 String eingesetzt, da sich im Test gezeigt hat, dass die Ungenauigkeit höher wird
-        Ist der Faktor sehr hoch zeigt es an, dass die Koordinaten nicht stimmen können
+        Skalierung wird nur angezeigt und nicht als Parameter im Proj4 String eingesetzt, da sich im Test gezeigt hat, dass die Ungenauigkeit hï¿½her wird
+        Ist der Faktor sehr hoch zeigt es an, dass die Koordinaten nicht stimmen kï¿½nnen
         
         
         */
@@ -459,7 +457,7 @@ public class Proj4_Lokal extends javax.swing.JFrame {
 
         }         
         } catch (Exception e) {
-        JOptionPane.showMessageDialog(null, "Bitte korrekten Zahlenwert eingeben!", "Nicht möglich", JOptionPane.ERROR_MESSAGE);            
+        JOptionPane.showMessageDialog(null, "Bitte korrekten Zahlenwert eingeben!", "Nicht mï¿½glich", JOptionPane.ERROR_MESSAGE);            
         }
         
 

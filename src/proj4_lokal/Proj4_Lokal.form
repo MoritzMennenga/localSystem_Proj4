@@ -296,7 +296,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Longitude / L&#xe4;nge"/>
+        <Property name="text" type="java.lang.String" value="Longitude / Laenge"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
@@ -359,7 +359,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel14">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Longitude / L&#xe4;nge"/>
+        <Property name="text" type="java.lang.String" value="Longitude / Laenge"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator2">
