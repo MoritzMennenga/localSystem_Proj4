@@ -353,7 +353,7 @@ public class Proj4_Lokal extends javax.swing.JFrame {
 
     private void projButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_projButtonActionPerformed
         /*      
-        Zwei Ausf�hrungen m�ssen beachtet werden
+        Zwei Ausführungen müssen beachtet werden
         1:  Ist das lokale System perfekt genordet, so reicht es die Koordinate des Ursprungs in WGS 84 in den Proj4 String einzugeben
         2:  Ist das lokale System nicht genau genordet, so muss der Rotationswinkel zwischen dem lokalen und dem Weltsystem berechnet werden
             Dazu sind je zwei Koordinaten notwendig, die beide auf dem gleichen Hochwert liegen
@@ -364,9 +364,7 @@ public class Proj4_Lokal extends javax.swing.JFrame {
         http://www.gassipods.de/downloads/gcexceltool_v2.xls
         
         
-        Die Berechnung der Winkels zwischen de
-        
-        Fehler m�glicherweise durch den Unterschied von Loxodrome und Orthodrome
+        Fehler möglicherweise durch den Unterschied von Loxodrome und Orthodrome
         
         */
         
